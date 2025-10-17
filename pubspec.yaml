@@ -1,0 +1,36 @@
+name: mushaf
+description: "Madani Qur'an Mushaf."
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ^3.9.2
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  bloc: ^9.0.0
+  flutter_bloc: ^9.0.0
+  shared_preferences: ^	2.5.1
+  fluttertoast: ^8.2.11
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  assets:
+    - lib/assets/
+    - lib/assets/fonts/
+    - lib/assets/fonts/hafs.ttf
+    - lib/assets/jsons/
+    - lib/assets/images/
+    - lib/assets/images/surah_header.png
+
+  fonts:
+    - family: hafs
+      fonts:
+        - asset: packages/mushaf/assets/fonts/hafs.ttf
