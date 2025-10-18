@@ -375,14 +375,14 @@ class QuranLibraryScreen extends StatelessWidget {
                                 WidgetsBinding.instance.addPostFrameCallback((
                                   _,
                                 ) async {
-                                  if (onPageChanged != null) {
-                                    onPageChanged!(pageIndex);
-                                  }
                                   quranCtrl.state.overlayEntry?.remove();
                                   quranCtrl.state.overlayEntry = null;
                                   quranCtrl.state.currentPageNumber.value =
                                       pageIndex + 1;
                                   quranCtrl.saveLastPage(pageIndex + 1);
+                                  if (onPageChanged != null) {
+                                    onPageChanged!(pageIndex);
+                                  }
                                 });
                               },
                               pageSnapping: true,
