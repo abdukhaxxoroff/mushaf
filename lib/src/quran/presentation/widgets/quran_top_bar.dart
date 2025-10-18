@@ -199,10 +199,10 @@ class _MenuBottomSheet extends StatelessWidget {
                   unselectedLabelColor: textColor.withValues(alpha: 0.6),
                   indicatorColor: accentColor,
                   indicatorWeight: .5,
-                  labelStyle: QuranLibrary().cairoStyle.copyWith(
+                  labelStyle: Mushaf().cairoStyle.copyWith(
                       fontSize: 15, fontWeight: FontWeight.w700, height: 1.3),
                   unselectedLabelStyle:
-                      QuranLibrary().cairoStyle.copyWith(fontSize: 15),
+                      Mushaf().cairoStyle.copyWith(fontSize: 15),
                   tabs: [
                     Tab(text: style.tabIndexLabel ?? 'الفهرس'),
                     Tab(text: style.tabSearchLabel ?? 'البحث'),
@@ -240,9 +240,9 @@ class _IndexTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final jozzList = QuranLibrary.allJoz;
-    final hizbList = QuranLibrary.allHizb;
-    final surahs = QuranLibrary.getAllSurahs(isArabic: false);
+    final jozzList = Mushaf.allJoz;
+    final hizbList = Mushaf.allHizb;
+    final surahs = Mushaf.getAllSurahs(isArabic: false);
 
     final Color textColor = style.textColor ?? AppColors.getTextColor(isDark);
     final Color accentColor = style.accentColor ?? Colors.teal;
@@ -268,10 +268,10 @@ class _IndexTab extends StatelessWidget {
               unselectedLabelColor: textColor.withValues(alpha: 0.6),
               indicatorColor: accentColor,
               indicatorWeight: .5,
-              labelStyle: QuranLibrary().cairoStyle.copyWith(
+              labelStyle: Mushaf().cairoStyle.copyWith(
                   fontSize: 13, fontWeight: FontWeight.w700, height: 1.3),
               unselectedLabelStyle:
-                  QuranLibrary().cairoStyle.copyWith(fontSize: 13),
+                  Mushaf().cairoStyle.copyWith(fontSize: 13),
               tabs: [
                 Tab(text: style.tabSurahsLabel ?? 'السور'),
                 Tab(text: style.tabJozzLabel ?? 'الأجزاء'),
@@ -320,9 +320,9 @@ class _SearchTab extends StatelessWidget {
                     quranCtrl.searchResultSurahs.value = [];
                     return;
                   }
-                  final ayahResults = QuranLibrary().search(txt);
+                  final ayahResults = Mushaf().search(txt);
                   quranCtrl.searchResultAyahs.value = [...ayahResults];
-                  final surahResults = QuranLibrary().surahSearch(txt);
+                  final surahResults = Mushaf().surahSearch(txt);
                   quranCtrl.searchResultSurahs.value = [...surahResults];
                 },
                 style: TextStyle(color: textColor),
@@ -334,7 +334,7 @@ class _SearchTab extends StatelessWidget {
                   suffixIcon: Icon(Icons.search,
                       color: textColor.withValues(alpha: 0.6)),
                   hintText: 'بحث في القرآن',
-                  hintStyle: QuranLibrary().cairoStyle.copyWith(
+                  hintStyle: Mushaf().cairoStyle.copyWith(
                       color: textColor.withValues(alpha: 0.6),
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
@@ -381,7 +381,7 @@ class _SearchTab extends StatelessWidget {
                           if (quranCtrl.isDownloadFonts) {
                             await quranCtrl.prepareFonts(search.startPage!);
                           }
-                          QuranLibrary().jumpToSurah(search.surahNumber);
+                          Mushaf().jumpToSurah(search.surahNumber);
                         },
                         child: Container(
                           alignment: Alignment.center,
@@ -449,7 +449,7 @@ class _SearchTab extends StatelessWidget {
                         if (quranCtrl.isDownloadFonts) {
                           await quranCtrl.prepareFonts(ayah.page);
                         }
-                        QuranLibrary().jumpToAyah(ayah.page, ayah.ayahUQNumber);
+                        Mushaf().jumpToAyah(ayah.page, ayah.ayahUQNumber);
                       },
                     );
                   },
@@ -506,7 +506,7 @@ class _BookmarksTab extends StatelessWidget {
                         : colorCode == yellowHighLightColor
                             ? 'الفواصل الحمراء'
                             : 'الفواصل الخضراء',
-                    style: QuranLibrary().cairoStyle.copyWith(
+                    style: Mushaf().cairoStyle.copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: textColor),
@@ -514,7 +514,7 @@ class _BookmarksTab extends StatelessWidget {
                   subtitle: Text(
                     'عدد: ${bookmarks.length}'.convertNumbersAccordingToLang(
                         languageCode: languageCode),
-                    style: QuranLibrary().cairoStyle.copyWith(
+                    style: Mushaf().cairoStyle.copyWith(
                         color: textColor.withValues(alpha: 0.7), fontSize: 12),
                   ),
                   childrenPadding:
@@ -529,7 +529,7 @@ class _BookmarksTab extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                           onTap: () {
                             Navigator.pop(context);
-                            QuranLibrary().jumpToBookmark(bookmark);
+                            Mushaf().jumpToBookmark(bookmark);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -565,7 +565,7 @@ class _BookmarksTab extends StatelessWidget {
                                             .toString()
                                             .convertNumbersAccordingToLang(
                                                 languageCode: languageCode),
-                                        style: QuranLibrary()
+                                        style: Mushaf()
                                             .cairoStyle
                                             .copyWith(fontSize: 12),
                                       ),
@@ -583,7 +583,7 @@ class _BookmarksTab extends StatelessWidget {
                                         bookmark.name,
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
-                                        style: QuranLibrary()
+                                        style: Mushaf()
                                             .cairoStyle
                                             .copyWith(
                                                 fontSize: 15,
@@ -646,7 +646,7 @@ class _BookmarksTab extends StatelessWidget {
                   const SizedBox(height: 16),
                   Text(
                     'لا توجد فواصل محفوظة',
-                    style: QuranLibrary().cairoStyle.copyWith(
+                    style: Mushaf().cairoStyle.copyWith(
                           color: textColor.withValues(alpha: 0.7),
                         ),
                   ),
@@ -668,7 +668,7 @@ class _BookmarksTab extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: QuranLibrary().cairoStyle.copyWith(fontSize: 12, color: fg),
+        style: Mushaf().cairoStyle.copyWith(fontSize: 12, color: fg),
       ),
     );
   }
@@ -692,7 +692,7 @@ class _SurahsList extends StatelessWidget {
         child: InkWell(
           onTap: () {
             Navigator.pop(context);
-            QuranLibrary().jumpToSurah(index + 1);
+            Mushaf().jumpToSurah(index + 1);
           },
           child: Container(
             padding:
@@ -722,7 +722,7 @@ class _SurahsList extends StatelessWidget {
                     Text(
                       '${index + 1}'.convertNumbersAccordingToLang(
                           languageCode: languageCode),
-                      style: QuranLibrary()
+                      style: Mushaf()
                           .cairoStyle
                           .copyWith(fontSize: 14, color: textColor),
                     ),
@@ -742,7 +742,7 @@ class _SurahsList extends StatelessWidget {
                     ),
                     Text(
                       surahs[index],
-                      style: QuranLibrary().cairoStyle.copyWith(
+                      style: Mushaf().cairoStyle.copyWith(
                           fontSize: 14, color: textColor, height: 1.2),
                     ),
                   ],
@@ -794,7 +794,7 @@ class _JozzList extends StatelessWidget {
           ),
           title: Text(
             jozzList[jozzIndex],
-            style: QuranLibrary().cairoStyle.copyWith(
+            style: Mushaf().cairoStyle.copyWith(
                   fontWeight: FontWeight.w600,
                   color: textColor,
                 ),
@@ -808,7 +808,7 @@ class _JozzList extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4),
                 onTap: () {
                   Navigator.pop(context);
-                  QuranLibrary().jumpToHizb(hizbIndex + 1);
+                  Mushaf().jumpToHizb(hizbIndex + 1);
                 },
                 child: Container(
                   width: double.infinity,
@@ -824,7 +824,7 @@ class _JozzList extends StatelessWidget {
                   ),
                   child: Text(
                     hizbList[hizbIndex],
-                    style: QuranLibrary().cairoStyle.copyWith(
+                    style: Mushaf().cairoStyle.copyWith(
                           color: textColor,
                         ),
                   ),

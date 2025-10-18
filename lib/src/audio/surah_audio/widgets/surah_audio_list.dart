@@ -177,7 +177,7 @@ class SurahAudioList extends StatelessWidget {
                 child: Text(
                   surahNumber.toString().convertNumbersAccordingToLang(
                       languageCode: languageCode ?? 'ar'),
-                  style: QuranLibrary().cairoStyle.copyWith(
+                  style: Mushaf().cairoStyle.copyWith(
                         color: Colors.white,
                         fontSize: 14.0,
                         fontWeight: FontWeight.bold,
@@ -209,7 +209,7 @@ class SurahAudioList extends StatelessWidget {
                     children: [
                       Text(
                         surah.englishName,
-                        style: QuranLibrary().cairoStyle.copyWith(
+                        style: Mushaf().cairoStyle.copyWith(
                               fontSize: 12.0,
                               height: 1.3,
                               color: (style?.textColor ??
@@ -230,7 +230,7 @@ class SurahAudioList extends StatelessWidget {
                           '${surah.ayahs.length} ${surahAudioCtrl.getAyahOrAyat(surah.ayahs.length)}'
                               .convertNumbersAccordingToLang(
                                   languageCode: languageCode ?? 'ar'),
-                          style: QuranLibrary().cairoStyle.copyWith(
+                          style: Mushaf().cairoStyle.copyWith(
                                 fontSize: 10.0,
                                 color: style?.primaryColor ??
                                     AppColors.getTextColor(isDark),

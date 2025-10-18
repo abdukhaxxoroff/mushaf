@@ -260,7 +260,7 @@ class SurahDisplayScreen extends StatelessWidget {
                             centerTitle: true,
                             title: Text(
                               surahCtrl.getSurahName(),
-                              style: QuranLibrary().naskhStyle.copyWith(
+                              style: Mushaf().naskhStyle.copyWith(
                                     color: isDark ? Colors.white : Colors.black,
                                     fontSize: 22,
                                   ),

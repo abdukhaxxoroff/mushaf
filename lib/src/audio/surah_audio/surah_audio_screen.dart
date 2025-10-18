@@ -22,7 +22,7 @@ class SurahAudioScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'الإستماع للسور',
-          style: QuranLibrary().cairoStyle.copyWith(
+          style: Mushaf().cairoStyle.copyWith(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
                 color: textColor,

@@ -185,7 +185,7 @@ class _PackageSliderWidgetState extends State<PackageSliderWidget> {
                     ),
                     child: Text(
                       'downloading'.tr,
-                      style: QuranLibrary().cairoStyle.copyWith(
+                      style: Mushaf().cairoStyle.copyWith(
                             color: widget.textColor ?? Colors.white,
                             height: 1.3,
                             fontWeight: FontWeight.w600,
@@ -213,7 +213,7 @@ class _PackageSliderWidgetState extends State<PackageSliderWidget> {
                                   '$remaining')
                               .convertNumbersAccordingToLang(
                                   languageCode: widget.languageCode ?? 'ar'),
-                          style: QuranLibrary().cairoStyle.copyWith(
+                          style: Mushaf().cairoStyle.copyWith(
                                 color: widget.textColor ?? Colors.white,
                                 height: 1.3,
                                 fontWeight: FontWeight.w600,
@@ -238,7 +238,7 @@ class _PackageSliderWidgetState extends State<PackageSliderWidget> {
                                   '$total')
                               .convertNumbersAccordingToLang(
                                   languageCode: widget.languageCode ?? 'ar'),
-                          style: QuranLibrary().cairoStyle.copyWith(
+                          style: Mushaf().cairoStyle.copyWith(
                                 color: widget.textColor ?? Colors.white,
                                 height: 1.3,
                                 fontWeight: FontWeight.w600,

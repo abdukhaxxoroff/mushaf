@@ -53,7 +53,7 @@ class SurahLastListen extends StatelessWidget {
                   children: [
                     Text(
                       'آخر إستماع'.tr,
-                      style: QuranLibrary().cairoStyle.copyWith(
+                      style: Mushaf().cairoStyle.copyWith(
                             fontSize: 16,
                             height: 1.3,
                             fontWeight: FontWeight.w600,
@@ -69,7 +69,7 @@ class SurahLastListen extends StatelessWidget {
                         surahAudioCtrl.textDurationFormatted
                             .convertNumbersAccordingToLang(
                                 languageCode: languageCode ?? 'ar'),
-                        style: QuranLibrary().cairoStyle.copyWith(
+                        style: Mushaf().cairoStyle.copyWith(
                               fontSize: 14,
                               height: 1.3,
                               color: textColor.withValues(alpha: 0.75),

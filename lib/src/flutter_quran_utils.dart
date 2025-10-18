@@ -15,7 +15,7 @@ part of '/quran.dart';
 ///
 /// Note: Ensure that you have the necessary dependencies and configurations
 /// set up in your Flutter project to use this class effectively.
-class QuranLibrary {
+class Mushaf {
   // Cache for frequently accessed data
   static final Map<String, dynamic> _cache = {};
   static bool _isInitialized = false;
@@ -993,14 +993,14 @@ class QuranLibrary {
   }
 
   ///Singleton factory
-  static final QuranLibrary _instance = QuranLibrary._internal();
+  static final Mushaf _instance = Mushaf._internal();
 
-  /// Factory constructor for creating a new instance of [QuranLibrary].
+  /// Factory constructor for creating a new instance of [Mushaf].
   ///
-  /// This constructor is used to create an instance of the [QuranLibrary] class.
-  factory QuranLibrary() {
+  /// This constructor is used to create an instance of the [Mushaf] class.
+  factory Mushaf() {
     return _instance;
   }
 
-  QuranLibrary._internal();
+  Mushaf._internal();
 }

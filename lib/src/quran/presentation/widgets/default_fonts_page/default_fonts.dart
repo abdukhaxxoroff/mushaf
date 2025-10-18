@@ -159,7 +159,7 @@ class DefaultFontsBuild extends StatelessWidget {
                   );
                 });
               }(),
-              style: QuranLibrary().hafsStyle,
+              style: Mushaf().hafsStyle,
             ),
           ),
         );

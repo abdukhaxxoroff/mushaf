@@ -46,7 +46,7 @@ class GetSingleAyah extends StatelessWidget {
         QuranCtrl.instance
             .getPageNumberByAyahAndSurahNumber(ayahNumber, surahNumber);
     log('surahNumber: $surahNumber, ayahNumber: $ayahNumber, pageNumber: $pageNumber');
-    final bool currentFontsSelected = QuranLibrary().currentFontsSelected == 1;
+    final bool currentFontsSelected = Mushaf().currentFontsSelected == 1;
     if (ayah.text.isEmpty) {
       return Text(
         'الآية غير موجودة',
@@ -57,7 +57,7 @@ class GetSingleAyah extends StatelessWidget {
       );
     }
     if (currentFontsSelected) {
-      QuranLibrary().getFontsPrepareMethod(
+      Mushaf().getFontsPrepareMethod(
           pageIndex: pageNumber - 1, isFontsLocal: islocalFont ?? false);
     }
     return RichText(

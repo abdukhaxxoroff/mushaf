@@ -5,7 +5,7 @@ class ToastUtils {
     final snackBar = SnackBar(
       content: Text(
         msg,
-        style: QuranLibrary().naskhStyle,
+        style: Mushaf().naskhStyle,
         textAlign: TextAlign.center,
       ),
       backgroundColor: const Color(0xffe8decb),

@@ -270,7 +270,7 @@ class DownloadedAndDeleteWidget extends StatelessWidget {
                 fullyDownloaded
                     ? (style?.redownloadText ?? 'إعادة')
                     : (style?.downloadText ?? 'تحميل'),
-                style: QuranLibrary().cairoStyle.copyWith(
+                style: Mushaf().cairoStyle.copyWith(
                       fontSize: 14,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -306,7 +306,7 @@ class DownloadedTextWidget extends StatelessWidget {
           'تم تحميل $downloaded/$total آية'
               .convertNumbersAccordingToLang(languageCode: language ?? 'ar'),
       style: style?.surahSubtitleStyle ??
-          QuranLibrary().cairoStyle.copyWith(
+          Mushaf().cairoStyle.copyWith(
                 fontSize: 14,
                 color: Colors.grey[700],
                 height: 1.2,
@@ -374,7 +374,7 @@ class HeaderBuild extends StatelessWidget {
               child: Text(
                 style?.titleText ?? 'إدارة تحميل آيات السور',
                 style: style?.titleTextStyle ??
-                    QuranLibrary().cairoStyle.copyWith(
+                    Mushaf().cairoStyle.copyWith(
                           fontSize: 18,
                           color: AppColors.getTextColor(isDark ?? false),
                           fontWeight: FontWeight.bold,

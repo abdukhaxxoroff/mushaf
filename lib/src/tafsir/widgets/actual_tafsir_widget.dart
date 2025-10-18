@@ -115,7 +115,7 @@ class ActualTafsirWidget extends StatelessWidget {
         TextSpan(
             text: tafsirStyle.tafsirIsEmptyNote ??
                 '\n\nتفسير هذه الآية في الأيات السابقة',
-            style: QuranLibrary().cairoStyle)
+            style: Mushaf().cairoStyle)
       ];
     }
     final spans = <InlineSpan>[

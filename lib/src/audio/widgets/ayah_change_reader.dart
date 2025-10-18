@@ -89,7 +89,7 @@ class AyahChangeReader extends StatelessWidget {
                       contentPadding: const EdgeInsets.symmetric(horizontal: 8),
                       title: Text(
                         '${info['name']}'.tr,
-                        style: QuranLibrary().cairoStyle.copyWith(
+                        style: Mushaf().cairoStyle.copyWith(
                               color: textColor,
                               fontSize: itemFontSize,
                             ),
@@ -121,7 +121,7 @@ class AyahChangeReader extends StatelessWidget {
           () => Text(
             '${ReadersConstants.ayahReaderInfo[AudioCtrl.instance.state.ayahReaderIndex.value]['name']}'
                 .tr,
-            style: QuranLibrary().cairoStyle.copyWith(
+            style: Mushaf().cairoStyle.copyWith(
                   color: textColor,
                   fontSize: fontSize,
                 ),

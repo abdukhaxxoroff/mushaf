@@ -49,7 +49,7 @@ class ChangeTafsirDialog extends StatelessWidget {
                           .tafsirAndTranslationsItems[
                               tafsirCtrl.radioValue.value]
                           .name,
-                  style: QuranLibrary().cairoStyle.copyWith(
+                  style: Mushaf().cairoStyle.copyWith(
                         color: tafsirStyle.currentTafsirColor ??
                             const Color(0xffCDAD80),
                         fontSize: 14,
@@ -137,7 +137,7 @@ class DailogBuild extends StatelessWidget {
         ),
         child: Text(
           title,
-          style: QuranLibrary().cairoStyle.copyWith(
+          style: Mushaf().cairoStyle.copyWith(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: tafsirStyle.textTitleColor ?? Colors.white),
@@ -272,7 +272,7 @@ class TafsirItemWidget extends StatelessWidget {
                                 tafsirCtrl
                                     .tafsirAndTranslationsItems[tafsirIndex]
                                     .name,
-                            style: QuranLibrary().cairoStyle.copyWith(
+                            style: Mushaf().cairoStyle.copyWith(
                                   color: tafsirCtrl.radioValue.value ==
                                           tafsirIndex
                                       ? tafsirStyle.selectedTafsirTextColor ??
@@ -291,7 +291,7 @@ class TafsirItemWidget extends StatelessWidget {
                                     tafsirCtrl
                                         .tafsirAndTranslationsItems[tafsirIndex]
                                         .bookName,
-                            style: QuranLibrary().cairoStyle.copyWith(
+                            style: Mushaf().cairoStyle.copyWith(
                                   color: tafsirCtrl.radioValue.value ==
                                           tafsirIndex
                                       ? tafsirStyle.selectedTafsirTextColor ??
