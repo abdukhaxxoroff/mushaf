@@ -28,7 +28,7 @@ class AssetsPath implements _AssetsPath {
   static final AssetsPath assets = AssetsPath._();
 
   // 3. حدد البادئة مرة واحدة
-  static const String _prefix = "packages/quran_library/assets/svg/";
+  static const String _prefix = "packages/mushaf/assets/svg/";
 
   // 4. الدالة السحرية noSuchMethod
   @override

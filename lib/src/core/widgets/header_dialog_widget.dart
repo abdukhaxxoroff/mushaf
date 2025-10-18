@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quran_library/src/core/utils/app_colors.dart';
+import 'package:mushaf/src/core/utils/app_colors.dart';
 
 class HeaderDialogWidget extends StatelessWidget {
   final bool? isDark;
@@ -43,7 +43,7 @@ class HeaderDialogWidget extends StatelessWidget {
                   fontFamily: 'cairo',
                   height: 1.3,
                   color: AppColors.getTextColor(isDark!),
-                  package: 'quran_library',
+                  package: 'mushaf',
                 ),
                 textAlign: TextAlign.center,
               ),

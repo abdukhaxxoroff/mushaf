@@ -272,7 +272,7 @@ TextSpan _customSpan({
                         ? ayahSelectedBackgroundColor ??
                             const Color(0xffCDAD80).withValues(alpha: 0.25)
                         : null),
-            package: "quran_library",
+            package: "mushaf",
           ),
           recognizer: LongPressGestureRecognizer(
               duration: const Duration(milliseconds: 500))
@@ -314,7 +314,7 @@ TextSpan _customSpan({
                                   const Color(0xffCDAD80)
                                       .withValues(alpha: 0.25)
                               : null),
-                  package: "quran_library",
+                  package: "mushaf",
                 ),
                 recognizer: LongPressGestureRecognizer(
                     duration: const Duration(milliseconds: 500))

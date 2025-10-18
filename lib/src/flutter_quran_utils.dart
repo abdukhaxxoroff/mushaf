@@ -238,7 +238,7 @@ class QuranLibrary {
                 color: color ?? Colors.black,
                 fontFamily: "surahName",
                 fontSize: 38,
-                package: "quran_library",
+                package: "mushaf",
               ),
             ));
     _cache['allSurahsArtPath'] = paths;
@@ -258,7 +258,7 @@ class QuranLibrary {
         color: color ?? Colors.black,
         fontFamily: "surahName",
         fontSize: 38,
-        package: "quran_library",
+        package: "mushaf",
       ),
     );
     _cache['allSurahsArtPath'] = paths;
@@ -959,7 +959,7 @@ class QuranLibrary {
     color: Colors.black,
     fontSize: 23.55,
     fontFamily: "hafs",
-    package: "quran_library",
+    package: "mushaf",
   );
 
   /// [naskhStyle] هو النمط الافتراضي للنصوص الآخرى.
@@ -969,7 +969,7 @@ class QuranLibrary {
     color: Colors.black,
     fontSize: 23.55,
     fontFamily: "naskh",
-    package: "quran_library",
+    package: "mushaf",
   );
 
   /// [cairoStyle] هو النمط الافتراضي للنصوص الآخرى.
@@ -979,7 +979,7 @@ class QuranLibrary {
     color: Colors.black,
     fontSize: 18,
     fontFamily: "cairo",
-    package: "quran_library",
+    package: "mushaf",
   );
 
   /// مسح ذاكرة التخزين المؤقت لمفتاح معين أو ذاكرة التخزين المؤقت بالكامل

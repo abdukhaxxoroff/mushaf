@@ -205,7 +205,7 @@ extension FontsDownloadWidgetExtension on QuranCtrl {
                               fontSize: 16,
                               fontFamily: 'cairo',
                               color: textColor,
-                              package: 'quran_library',
+                              package: 'mushaf',
                             ),
                       ),
                       Icon(
@@ -248,7 +248,7 @@ extension FontsDownloadWidgetExtension on QuranCtrl {
                     fontFamily: 'cairo',
                     color: notesColor,
                     height: 1.5,
-                    package: 'quran_library'),
+                    package: 'mushaf'),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),

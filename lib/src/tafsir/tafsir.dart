@@ -11,7 +11,7 @@ import 'package:get/get.dart' hide Response;
 import 'package:get_storage/get_storage.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:quran_library/quran_library.dart';
+import 'package:mushaf/quran.dart';
 
 import '/src/tafsir/core/extensions/helpers.dart';
 

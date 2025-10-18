@@ -73,7 +73,7 @@ class GetSingleAyah extends StatelessWidget {
               : (currentFontsSelected
                   ? 'p${((pageNumber - 1) + 2001)}'
                   : 'hafs'),
-          package: currentFontsSelected ? null : 'quran_library',
+          package: currentFontsSelected ? null : 'mushaf',
           fontSize: fontSize ?? 22,
           height: 1.7,
           letterSpacing: currentFontsSelected ? 3 : null,
@@ -99,7 +99,7 @@ class GetSingleAyah extends StatelessWidget {
                   : (currentFontsSelected
                       ? 'p${((pageNumber - 1) + 2001)}'
                       : 'hafs'),
-              package: currentFontsSelected ? null : 'quran_library',
+              package: currentFontsSelected ? null : 'mushaf',
               fontSize: fontSize ?? 22,
               height: 1.7,
               letterSpacing: currentFontsSelected ? 3 : null,
@@ -122,7 +122,7 @@ class GetSingleAyah extends StatelessWidget {
                       .convertEnglishNumbersToArabic('${ayah.ayahNumber}'),
                   style: TextStyle(
                     fontFamily: 'hafs',
-                    package: 'quran_library',
+                    package: 'mushaf',
                     fontSize: fontSize ?? 22,
                     height: 1.7,
                     color: textColor ?? AppColors.getTextColor(isDark!),

@@ -42,7 +42,7 @@ extension SajdaExtension on Widget {
                               Orientation.portrait
                           ? 13.0
                           : 18.0,
-                      package: 'quran_library',
+                      package: 'mushaf',
                     ),
                   )
                 ],

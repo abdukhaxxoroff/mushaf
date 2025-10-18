@@ -201,7 +201,7 @@ class SurahAudioList extends StatelessWidget {
                           (style?.textColor ?? AppColors.getTextColor(isDark)),
                       fontFamily: 'surahName',
                       fontSize: 32.sp,
-                      package: 'quran_library',
+                      package: 'mushaf',
                     ),
                   ),
                   const SizedBox(height: 4.0),

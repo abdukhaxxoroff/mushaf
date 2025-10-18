@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  quran_library:
+  mushaf:
     path: ../
   get: ^4.6.6
   drift_flutter: ^0.2.4

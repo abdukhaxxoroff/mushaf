@@ -178,7 +178,7 @@ class TafsirCtrl extends GetxController {
         String jsonString;
         if (selectedTafsir.fileName == _defaultDownloadedTafsirName) {
           jsonString = await rootBundle.loadString(
-              'packages/quran_library/assets/$_defaultDownloadedTafsirName.json');
+              'packages/mushaf/assets/$_defaultDownloadedTafsirName.json');
         } else {
           String filePath = join(_appDir.path, selectedTafsir.databaseName);
           final exists = await File(filePath).exists();
@@ -235,7 +235,7 @@ class TafsirCtrl extends GetxController {
   Future<void> fetchTranslate() async {
     try {
       String path = radioValue.value == translationsStartIndex
-          ? 'packages/quran_library/assets/en.json'
+          ? 'packages/mushaf/assets/en.json'
           : join(_appDir.path, '$translationLangCode.json');
       isLoading.value = true;
 
@@ -244,7 +244,7 @@ class TafsirCtrl extends GetxController {
 
       if (radioValue.value == translationsStartIndex || !exists) {
         jsonString = await rootBundle
-            .loadString('packages/quran_library/assets/en.json');
+            .loadString('packages/mushaf/assets/en.json');
       } else {
         jsonString = await File(path).readAsString();
       }

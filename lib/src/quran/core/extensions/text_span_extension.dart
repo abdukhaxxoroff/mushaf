@@ -52,12 +52,12 @@ extension TextSpanExtension on String {
           matchedTextStyle = const TextStyle(
               color: Color(0xff008000),
               fontFamily: 'uthmanic2',
-              package: "quran_library");
+              package: "mushaf");
         } else if (isParenthesesMatch) {
           matchedTextStyle = const TextStyle(
               color: Color(0xff008000),
               fontFamily: 'uthmanic2',
-              package: "quran_library");
+              package: "mushaf");
         } else if (isSquareBracketMatch) {
           matchedTextStyle = const TextStyle(color: Color(0xff814714));
         } else if (isDashMatch) {
@@ -66,7 +66,7 @@ extension TextSpanExtension on String {
           matchedTextStyle = const TextStyle(
               color: Color(0xffa24308),
               fontFamily: 'naskh',
-              package: "quran_library");
+              package: "mushaf");
         }
 
         spans.add(TextSpan(

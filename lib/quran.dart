@@ -98,5 +98,5 @@ part 'src/quran/presentation/widgets/top_bottom_widget/top_and_bottom_widget.dar
 /// This file (`quran.dart`) serves as the main entry point for the library, parting
 /// all necessary components and defining the `part` directives for modular organization.
 ///
-/// To use this library, import `package:quran_library/quran_library.dart` and utilize
+/// To use this library, import `package:mushaf/mushaf.dart` and utilize
 /// the provided classes and functions. Ensure that all required assets (fonts, JSONs, DB) are correctly configured in `pubspec.yaml`.

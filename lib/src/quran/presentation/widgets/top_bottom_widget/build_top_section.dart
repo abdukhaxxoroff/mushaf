@@ -112,7 +112,7 @@ class BuildTopSection extends StatelessWidget {
       fontSize: UiHelper.currentOrientation(18.0, 22.0, context),
       fontFamily: 'naskh',
       color: const Color(0xff77554B),
-      package: 'quran_library',
+      package: 'mushaf',
     );
   }
 }

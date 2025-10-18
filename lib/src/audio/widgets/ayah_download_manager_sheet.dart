@@ -153,7 +153,7 @@ class AyahDownloadManagerSheet extends StatelessWidget {
                                           fontFamily: "surahName",
                                           fontSize: style?.surahNameSize ?? 30,
                                           height: 1.2,
-                                          package: "quran_library",
+                                          package: "mushaf",
                                         ),
                                   ),
                                   DownloadedTextWidget(

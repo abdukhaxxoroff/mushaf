@@ -1,6 +1,6 @@
 // import 'dart:math';
 
-// import 'package:quran_library/quran.dart';
+// import 'package:mushaf/quran.dart';
 // import 'package:tflite_flutter/tflite_flutter.dart';
 
 // class QuranSearch {
@@ -24,7 +24,7 @@
 //   Future<void> loadModel() async {
 //     try {
 //       interpreter = await Interpreter.fromAsset(
-//         'packages/quran_library/assets/arabic_bert.tflite',
+//         'packages/mushaf/assets/arabic_bert.tflite',
 //       );
 
 //       // Ensure interpreter is initialized before calling checkModelInputs

@@ -64,7 +64,7 @@ class SurahCollapsedPlayWidget extends StatelessWidget {
                         color: textColor,
                         fontFamily: "surahName",
                         fontSize: 42,
-                        package: "quran_library",
+                        package: "mushaf",
                       ),
                       textAlign: TextAlign.center,
                     ),
