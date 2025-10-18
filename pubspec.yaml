@@ -1,4 +1,4 @@
-name: mushaf
+name: quran_library
 description: "Madani Qur'an Mushaf."
 version: 0.0.1
 homepage:
@@ -10,27 +10,61 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bloc: ^9.0.0
-  flutter_bloc: ^9.0.0
-  shared_preferences: ^	2.5.1
-  fluttertoast: ^8.2.11
-  intl: ^0.20.2
+  cupertino_icons: ^1.0.8
+  archive: ^4.0.7
+  audio_service: ^0.18.18
+  connectivity_plus: ^7.0.0
+  dio: ^5.9.0
+  flutter_cache_manager: ^3.4.1
+  flutter_screenutil: ^5.9.3
+  flutter_sliding_panel: ^0.0.5
+  flutter_svg: ^2.2.1
+  get: ^4.7.2
+  get_storage: ^2.1.1
+  just_audio: ^0.10.5
+  path: ^1.9.1
+  path_provider: ^2.1.5
+  rxdart: ^0.28.0
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.4.15
+  drift_dev: ^2.26.0
   flutter_lints: ^5.0.0
 
 flutter:
   assets:
-    - lib/assets/
-    - lib/assets/fonts/
-    - lib/assets/fonts/hafs.ttf
-    - lib/assets/jsons/
-    - lib/assets/images/
-    - lib/assets/images/surah_header.png
+    - assets/
+    - assets/fonts/
+    - assets/fonts/Kufam-Regular.ttf
+    - assets/fonts/NotoNaskhArabic-VariableFont_wght.ttf
+    - assets/fonts/UthmanicHafs_V20.ttf
+    - assets/jsons/
+    - assets/svg/
+    - assets/saadi.json
+    - assets/en.json
 
   fonts:
+    - family: kufi
+      fonts:
+        - asset: assets/fonts/Kufam-Regular.ttf
+    - family: naskh
+      fonts:
+        - asset: assets/fonts/NotoNaskhArabic-VariableFont_wght.ttf
     - family: hafs
       fonts:
-        - asset: packages/mushaf/assets/fonts/hafs.ttf
+        - asset: assets/fonts/UthmanicHafs_V20.ttf
+    - family: surahName
+      fonts:
+        - asset: assets/fonts/surah_name_naskh.ttf
+    - family: cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 900
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-Regular.ttf
