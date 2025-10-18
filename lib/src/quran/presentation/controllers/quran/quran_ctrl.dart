@@ -327,10 +327,10 @@ class QuranCtrl extends GetxController {
     if (quranPagesController.hasClients) {
       // استخدام animateToPage بدلاً من jumpToPage للحصول على انتقال أكثر سلاسة
       // Use animateToPage instead of jumpToPage for smoother transition
-      quranPagesController.animateToPage(
+      quranPagesController.jumpToPage(
         page,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
+        // duration: const Duration(milliseconds: 300),
+        // curve: Curves.easeInOut,
       );
     } else {
       quranPagesController = PageController(
