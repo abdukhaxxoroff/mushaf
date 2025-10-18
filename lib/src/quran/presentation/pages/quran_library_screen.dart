@@ -156,7 +156,7 @@ class QuranLibraryScreen extends StatelessWidget {
   /// When long-pressing on any verse with the loaded fonts, you can enable additional features
   /// such as copying the verse, sharing it, and more using [onAyahLongPress].
   final void Function(LongPressStartDetails details, AyahModel ayah)?
-      onAyahLongPress;
+  onAyahLongPress;
 
   /// * تُستخدم مع الخطوط المحملة *
   /// عند الضغط على أي لافتة سورة باستخدام الخطوط المحملة، يمكنك إضافة بعض التفاصيل حول السورة [onSurahBannerPress]
@@ -305,8 +305,9 @@ class QuranLibraryScreen extends StatelessWidget {
     if (appIconUrlForPlayAudioInBackground != null &&
         appIconUrlForPlayAudioInBackground!.isNotEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        AudioCtrl.instance
-            .updateAppIconUrl(appIconUrlForPlayAudioInBackground!);
+        AudioCtrl.instance.updateAppIconUrl(
+          appIconUrlForPlayAudioInBackground!,
+        );
       });
     }
 
@@ -336,15 +337,19 @@ class QuranLibraryScreen extends StatelessWidget {
                               // نلتقط نهاية السحب فقط لـ PageView عبر PageMetrics
                               final metrics = notification.metrics;
                               if (metrics is PageMetrics) {
-                                final int current = (metrics.page ??
-                                        (metrics.pixels /
-                                            metrics.viewportDimension))
-                                    .round();
+                                final int current =
+                                    (metrics.page ??
+                                            (metrics.pixels /
+                                                metrics.viewportDimension))
+                                        .round();
                                 if (quranCtrl.isDownloadFonts) {
                                   // تنفيذ بعد انتهاء الإطار لتجنّب أي تجميد
-                                  Future.microtask(() => quranCtrl.prepareFonts(
+                                  Future.microtask(
+                                    () => quranCtrl.prepareFonts(
                                       current,
-                                      isFontsLocal: isFontsLocal!));
+                                      isFontsLocal: isFontsLocal!,
+                                    ),
+                                  );
                                 }
                               }
                               return false; // لا نستهلك الإشعار
@@ -367,14 +372,14 @@ class QuranLibraryScreen extends StatelessWidget {
                               onPageChanged: (pageIndex) {
                                 // تشغيل العمليات في الخلفية لتجنب تجميد UI
                                 // Run operations in background to avoid UI freeze
-                                WidgetsBinding.instance
-                                    .addPostFrameCallback((_) async {
+                                WidgetsBinding.instance.addPostFrameCallback((
+                                  _,
+                                ) async {
                                   if (onPageChanged != null) {
                                     onPageChanged!(pageIndex);
-                                  } else {
-                                    quranCtrl.state.overlayEntry?.remove();
-                                    quranCtrl.state.overlayEntry = null;
                                   }
+                                  quranCtrl.state.overlayEntry?.remove();
+                                  quranCtrl.state.overlayEntry = null;
                                   quranCtrl.state.currentPageNumber.value =
                                       pageIndex + 1;
                                   quranCtrl.saveLastPage(pageIndex + 1);
@@ -442,7 +447,8 @@ class QuranLibraryScreen extends StatelessWidget {
                                   ),
                                 );
                               },
-                            ))
+                            ),
+                          )
                         : PageViewBuild(
                             circularProgressWidget: circularProgressWidget,
                             languageCode: languageCode,
