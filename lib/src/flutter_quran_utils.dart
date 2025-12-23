@@ -603,23 +603,23 @@ class Mushaf {
   /// لعرض التفسير، يمكنك استخدام [showTafsir].
   ///
   /// To show the tafsir, you can use [showTafsir].
-  Future<void> showTafsir({
-    required BuildContext context,
-    required int ayahNum,
-    required int pageIndex,
-    required String ayahTextN,
-    required int ayahUQNum,
-    required int ayahNumber,
-    TafsirStyle? tafsirStyle,
-  }) async =>
-      await TafsirCtrl.instance.showTafsirOnTap(
-        context: context,
-        ayahNum: ayahNum,
-        pageIndex: pageIndex,
-        ayahUQNum: ayahUQNum,
-        ayahNumber: ayahNumber,
-        tafsirStyle: tafsirStyle,
-      );
+  // Future<void> showTafsir({
+  //   required BuildContext context,
+  //   required int ayahNum,
+  //   required int pageIndex,
+  //   required String ayahTextN,
+  //   required int ayahUQNum,
+  //   required int ayahNumber,
+  //   TafsirStyle? tafsirStyle,
+  // }) async =>
+  //     await TafsirCtrl.instance.showTafsirOnTap(
+  //       context: context,
+  //       ayahNum: ayahNum,
+  //       pageIndex: pageIndex,
+  //       ayahUQNum: ayahUQNum,
+  //       ayahNumber: ayahNumber,
+  //       tafsirStyle: tafsirStyle,
+  //     );
 
   /// للحصول على التفسير الخاص بالآية،
   ///  فقط قم بتمرير رقم الآية لـ [getTafsirOfAyah].
