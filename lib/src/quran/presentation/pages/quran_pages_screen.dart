@@ -45,10 +45,6 @@ class QuranPagesScreen extends StatelessWidget {
     this.anotherMenuChildOnTap,
     this.secondMenuChild,
     this.secondMenuChildOnTap,
-    this.ayahStyle,
-    this.surahStyle,
-    this.isShowAudioSlider = true,
-    this.appIconUrlForPlayAudioInBackground,
     this.topBarStyle,
     // تحديد الصفحات
     this.page,
@@ -104,10 +100,6 @@ class QuranPagesScreen extends StatelessWidget {
   final void Function(AyahModel ayah)? anotherMenuChildOnTap;
   final Widget? secondMenuChild;
   final void Function(AyahModel ayah)? secondMenuChildOnTap;
-  final AyahAudioStyle? ayahStyle;
-  final SurahAudioStyle? surahStyle;
-  final bool? isShowAudioSlider;
-  final String? appIconUrlForPlayAudioInBackground;
   final QuranTopBarStyle? topBarStyle;
   final BuildContext parentContext;
   // تمكين تظليل/تحديد متعدد للآيات داخل هذه الشاشة فقط
@@ -149,14 +141,6 @@ class QuranPagesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // تحديث رابط أيقونة التطبيق إذا وُجد
-    if (appIconUrlForPlayAudioInBackground != null &&
-        appIconUrlForPlayAudioInBackground!.isNotEmpty) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        AudioCtrl.instance
-            .updateAppIconUrl(appIconUrlForPlayAudioInBackground!);
-      });
-    }
 
     // إعداد وضع التحديد المتعدد والتظليل الخارجي (بدون Stateful)
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -365,35 +349,12 @@ class QuranPagesScreen extends StatelessWidget {
                       builder: (quranCtrl) => Stack(
                         alignment: Alignment.center,
                         children: [
-                          isShowAudioSlider!
-                              ? BottomSlider(
-                                  isVisible:
-                                      QuranCtrl.instance.isShowControl.value,
-                                  onClose: () {
-                                    QuranCtrl.instance.isShowControl.value =
-                                        false;
-                                    SliderController.instance
-                                        .hideBottomContent();
-                                  },
-                                  isDark: isDark,
-                                  sliderHeight: UiHelper.currentOrientation(
-                                      0.0, 40.0, context),
-                                  style: ayahStyle ?? AyahAudioStyle(),
-                                  contentChild: const SizedBox.shrink(),
-                                  child: Flexible(
-                                    child: AyahsAudioWidget(
-                                      style: ayahStyle ?? AyahAudioStyle(),
-                                    ),
-                                  ),
-                                )
-                              : const SizedBox.shrink(),
                           appBar == null &&
                                   useDefaultAppBar &&
                                   quranCtrl.isShowControl.value
                               ? _QuranTopBar(
                                   languageCode ?? 'ar',
                                   isDark,
-                                  style: surahStyle ?? SurahAudioStyle(),
                                   backgroundColor: backgroundColor,
                                   downloadFontsDialogStyle:
                                       downloadFontsDialogStyle,

@@ -16,22 +16,17 @@ import 'package:get/get.dart' hide Response;
 import 'package:get_storage/get_storage.dart';
 import 'package:path_provider/path_provider.dart';
 
-import 'src/audio/audio.dart';
 import 'src/core/utils/app_colors.dart';
 import 'src/core/utils/ui_helper.dart';
 import 'src/core/widgets/header_dialog_widget.dart';
 import 'src/quran/core/helpers/responsive.dart';
-import 'src/tafsir/tafsir.dart';
 
-part 'src/audio/widgets/slider/bottom_slider.dart';
-part 'src/audio/widgets/slider/controller/slider_controller.dart';
 part 'src/core/utils/assets_path.dart';
 part 'src/core/utils/toast_utils.dart';
 part 'src/flutter_quran_utils.dart';
 part 'src/quran/core/extensions/context_extensions.dart';
 part 'src/quran/core/extensions/convert_arabic_to_english_numbers_extension.dart';
 part 'src/quran/core/extensions/convert_number_extension.dart';
-part 'src/quran/core/extensions/font_size_extension.dart';
 part 'src/quran/core/extensions/fonts_download_widget.dart';
 part 'src/quran/core/extensions/fonts_extension.dart';
 part 'src/quran/core/extensions/sajda_extension.dart';
@@ -85,12 +80,11 @@ part 'src/quran/presentation/widgets/top_bottom_widget/top_and_bottom_widget.dar
 /// A comprehensive library for displaying the Holy Quran in Flutter applications.
 ///
 /// This library provides a set of widgets, controllers, and data models to facilitate
-/// the integration of Quranic text, tafsir (exegesis), and various display styles
-/// into Flutter projects. It aims to offer a highly customizable and performant
-/// solution for Quranic applications.
+/// the integration of Quranic text and various display styles into Flutter projects.
+/// It aims to offer a highly customizable and performant solution for Quranic applications.
 ///
 /// The core components of this library include:
-/// - **Data Models**: Representing Ayahs, Surahs, Quran pages, and Tafsir data.
+/// - **Data Models**: Representing Ayahs, Surahs, and Quran pages.
 /// - **Controllers**: Managing the state and logic for Quran display, search, and bookmarking.
 /// - **Widgets**: Reusable UI components for rendering Quranic text, surah headers, and interactive elements.
 /// - **Utilities & Extensions**: Helper functions and Dart extensions for common tasks like number conversion, text normalization, and asset management.

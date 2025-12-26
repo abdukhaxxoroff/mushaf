@@ -38,12 +38,12 @@ extension SurahInfoExtension on void {
     try {
       if (context.mounted && context.findRenderObject() != null) {
         validContext = context;
-        log('السياق المرسل صالح', name: 'TafsirUi');
+        log('السياق المرسل صالح', name: 'SurahInfo');
       } else {
-        log('السياق المرسل غير صالح، محاولة استخدام بديل', name: 'TafsirUi');
+        log('السياق المرسل غير صالح، محاولة استخدام بديل', name: 'SurahInfo');
       }
     } catch (e) {
-      log('خطأ في التحقق من السياق المرسل: $e', name: 'TafsirUi');
+      log('خطأ في التحقق من السياق المرسل: $e', name: 'SurahInfo');
     }
 
     // إذا كان السياق المرسل غير صالح، نحاول استخدام Get.context
@@ -51,19 +51,19 @@ extension SurahInfoExtension on void {
     if (validContext == null) {
       try {
         if (Get.context != null) {
-          log('استخدام Get.context كخيار احتياطي', name: 'TafsirUi');
+          log('استخدام Get.context كخيار احتياطي', name: 'SurahInfo');
           validContext = Get.context;
         }
       } catch (e) {
-        log('خطأ في استخدام Get.context: $e', name: 'TafsirUi');
+        log('خطأ في استخدام Get.context: $e', name: 'SurahInfo');
       }
     }
 
     // إذا لم نتمكن من الحصول على سياق صالح
     // If we couldn't get a valid context
     if (validContext == null) {
-      log('لا يوجد سياق صالح لعرض التفسير، يُرجى التأكد من تمرير سياق من شاشة نشطة',
-          name: 'TafsirUi');
+      log('لا يوجد سياق صالح لعرض معلومات السورة، يُرجى التأكد من تمرير سياق من شاشة نشطة',
+          name: 'SurahInfo');
       // إظهار رسالة عن طريق GetX في حالة عدم توفر سياق صالح
       // Show message via GetX if no valid context is available
       try {

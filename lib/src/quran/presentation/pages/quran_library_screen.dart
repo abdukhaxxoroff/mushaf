@@ -55,10 +55,6 @@ class QuranLibraryScreen extends StatelessWidget {
     this.anotherMenuChildOnTap,
     this.secondMenuChild,
     this.secondMenuChildOnTap,
-    this.ayahStyle,
-    this.surahStyle,
-    this.isShowAudioSlider = true,
-    this.appIconUrlForPlayAudioInBackground,
     this.topBarStyle,
     required this.parentContext,
   });
@@ -250,26 +246,6 @@ class QuranLibraryScreen extends StatelessWidget {
   /// [secondMenuChildOnTap] Function called when pressing the second additional button in ayah options menu
   final void Function(AyahModel ayah)? secondMenuChildOnTap;
 
-  /// نمط تخصيص مظهر المشغل الصوتي للآيات - يتحكم في الألوان والخطوط والأيقونات [ayahStyle]
-  ///
-  /// [ayahStyle] Audio player style customization for ayahs - controls colors, fonts, and icons
-  final AyahAudioStyle? ayahStyle;
-
-  /// نمط تخصيص مظهر المشغل الصوتي للسور - يتحكم في الألوان والخطوط والأيقونات [surahStyle]
-  ///
-  /// [surahStyle] Audio player style customization for surahs - controls colors, fonts, and icons
-  final SurahAudioStyle? surahStyle;
-
-  /// إظهار أو إخفاء سلايدر التحكم في الصوت السفلي [isShowAudioSlider]
-  ///
-  /// [isShowAudioSlider] Show or hide the bottom audio control slider
-  final bool? isShowAudioSlider;
-
-  /// رابط أيقونة التطبيق للمشغل الصوتي / App icon URL for audio player
-  /// [appIconUrlForPlayAudioInBackground] يمكن تمرير رابط مخصص لأيقونة التطبيق في المشغل الصوتي
-  /// [appIconUrlForPlayAudioInBackground] You can pass a custom URL for the app icon in the audio player
-  final String? appIconUrlForPlayAudioInBackground;
-
   /// تخصيص نمط شريط الأعلى الخاص بالمصحف
   ///
   /// Customize the style of the Quran top bar
@@ -300,17 +276,6 @@ class QuranLibraryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // تحديث رابط أيقونة التطبيق إذا تم تمريره / Update app icon URL if provided
-    // Update app icon URL if provided
-    if (appIconUrlForPlayAudioInBackground != null &&
-        appIconUrlForPlayAudioInBackground!.isNotEmpty) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        AudioCtrl.instance.updateAppIconUrl(
-          appIconUrlForPlayAudioInBackground!,
-        );
-      });
-    }
-
     // if (isDark!) {
     //   QuranCtrl.instance.state.isTajweed.value = 1;
     //   GetStorage().write(StorageConstants().isTajweed, 1);

@@ -48,7 +48,7 @@ class SurahHeaderWidget extends StatelessWidget {
           ),
           alignment: Alignment.center,
           child: Text(
-            AudioCtrl.instance.state.currentAudioListSurahNum.value.toString(),
+            surahNumber.toString(),
             style: TextStyle(
               color: surahNameStyle?.surahNameColor ?? Colors.black,
               fontFamily: "surahName",

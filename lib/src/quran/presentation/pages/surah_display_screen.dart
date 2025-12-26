@@ -37,10 +37,6 @@ class SurahDisplayScreen extends StatelessWidget {
     this.sajdaName,
     this.secondMenuChild,
     this.secondMenuChildOnTap,
-    this.ayahStyle,
-    this.surahStyle,
-    this.isShowAudioSlider = true,
-    this.appIconUrlForPlayAudioInBackground,
     required this.parentContext,
   });
 
@@ -166,26 +162,6 @@ class SurahDisplayScreen extends StatelessWidget {
   /// [secondMenuChildOnTap] Function called when pressing the second additional button in ayah options menu
   final void Function(AyahModel ayah)? secondMenuChildOnTap;
 
-  /// نمط تخصيص مظهر المشغل الصوتي للآيات - يتحكم في الألوان والخطوط والأيقونات [ayahStyle]
-  ///
-  /// [ayahStyle] Audio player style customization for ayahs - controls colors, fonts, and icons
-  final AyahAudioStyle? ayahStyle;
-
-  /// نمط تخصيص مظهر المشغل الصوتي للسور - يتحكم في الألوان والخطوط والأيقونات [surahStyle]
-  ///
-  /// [surahStyle] Audio player style customization for surahs - controls colors, fonts, and icons
-  final SurahAudioStyle? surahStyle;
-
-  /// إظهار أو إخفاء سلايدر التحكم في الصوت السفلي [isShowAudioSlider]
-  ///
-  /// [isShowAudioSlider] Show or hide the bottom audio control slider
-  final bool? isShowAudioSlider;
-
-  /// رابط أيقونة التطبيق للمشغل الصوتي / App icon URL for audio player
-  /// [appIconUrlForPlayAudioInBackground] يمكن تمرير رابط مخصص لأيقونة التطبيق في المشغل الصوتي
-  /// [appIconUrlForPlayAudioInBackground] You can pass a custom URL for the app icon in the audio player
-  final String? appIconUrlForPlayAudioInBackground;
-
   /// السياق المطلوب من المستخدم لإدارة العمليات الداخلية للمكتبة [parentContext]
   /// مثل الوصول إلى MediaQuery، Theme، والتنقل بين الصفحات
   ///
@@ -213,16 +189,6 @@ class SurahDisplayScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AudioCtrl.instance;
-    // تحديث رابط أيقونة التطبيق إذا تم تمريره / Update app icon URL if provided
-    // Update app icon URL if provided
-    if (appIconUrlForPlayAudioInBackground != null &&
-        appIconUrlForPlayAudioInBackground!.isNotEmpty) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        AudioCtrl.instance
-            .updateAppIconUrl(appIconUrlForPlayAudioInBackground!);
-      });
-    }
     // شرح: تهيئة الشاشة وإعداد المقاييس
     // Explanation: Initialize screen and setup dimensions
     return ScreenUtilInit(
@@ -239,7 +205,6 @@ class SurahDisplayScreen extends StatelessWidget {
               final ctrl = state.controller!;
               // شرح: إعادة تحميل السورة إذا تغير رقمها
               // Explanation: Reload surah if its number changed
-              AudioCtrl.instance;
               if (ctrl.surahNumber != surahNumber) {
                 ctrl.loadSurah(surahNumber);
               }
@@ -275,6 +240,7 @@ class SurahDisplayScreen extends StatelessWidget {
                         languageCode ?? 'ar',
                         isDark,
                         backgroundColor: backgroundColor,
+              
                         topBarStyle: QuranTopBarStyle.defaults(isDark: isDark),
                       )
                     : null,
@@ -298,30 +264,6 @@ class SurahDisplayScreen extends StatelessWidget {
                     children: [
                       _buildSurahBody(parentContext, surahCtrl),
 
-                      // السلايدر السفلي - يظهر من الأسفل للأعلى
-                      // Bottom slider - appears from bottom to top
-                      isShowAudioSlider!
-                          ? Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16.0),
-                              child: Obx(() => BottomSlider(
-                                    isVisible:
-                                        QuranCtrl.instance.isShowControl.value,
-                                    onClose: () {
-                                      QuranCtrl.instance.isShowControl.value =
-                                          false;
-                                      SliderController.instance
-                                          .hideBottomContent();
-                                    },
-                                    style: ayahStyle ?? AyahAudioStyle(),
-                                    contentChild: SizedBox.shrink(),
-                                    child: Flexible(
-                                      child: AyahsAudioWidget(
-                                          style: ayahStyle ?? AyahAudioStyle()),
-                                    ),
-                                  )),
-                            )
-                          : SizedBox.shrink(),
                     ],
                   ),
                 )),
